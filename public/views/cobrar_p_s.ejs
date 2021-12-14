@@ -1,0 +1,70 @@
+<%- include('layouts/layouts.ejs'); %>
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card mt-4 text-center">
+        <div class="card-header">
+          <h2>Cobrar Producto/Servicio</h2>
+        </div>
+        <div class="card-body">
+          <form action="/cobrar_p_s" method="POST">
+            <div class=" row g-3 align-items-center">
+              <div class="col-auto">
+                <label class="col-form-label">Encargado</label>
+              </div>
+              <div class="col-md-8">
+                <input type="text" name="encargado" class="form-control mb-3" placeholder="Nombre ">
+              </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <select name="producto" class="form-select" aria-label="Default select example">
+                    <option selected>Producto</option>
+                    <option value="Shampoo ...">Shampoo ...</option>
+                    <option value="Maschera ...">Maschera ...</option>
+                    <option value="Ricostruttore ...">Ricostruttore ...</option>
+                    <option value="Bifasico ...">Bifasico ...</option>
+                    <option value="Fluido ...">Fluido ...</option>
+                    <option value="Lozione ...">Lozione ...</option>
+                  </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <select name="tipo" class="form-select" aria-label="Default select example">
+                  <option selected>Tipo</option>
+                  <option value="di Goji">di Goji</option>
+                  <option value="di Argan">di Argan</option>
+                  <option value="Platino">Platino</option>
+                  <option value="Ialuronico">Ialuronico</option>
+                  <option value="di Agave">di Agave</option>
+                </select>
+          </div>
+            <div class=" col-md-6 mb-3" >
+                <select name="precentacion" class="form-select " aria-label="Default select example">
+                    <option selected>Precentacion</option>
+                    <option value="1 lt">1 lt</option>
+                    <option value="500 ml">500 ml</option>
+                    <option value="250 ml">250 ml</option>
+                    <option value="200 ml">200 ml</option>
+                    <option value="300 ml">300 ml</option>
+                    <option value="100 ml">100 ml</option>
+                  </select>
+            </div>
+            <div class="col-md-6">
+              <select name="cantidad" class="form-select ">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div class="form-group mb-3 col-md-6">
+              <label class="form-label">Total</label>
+              <input type="text" name="total" class="form-control">
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button type="submit" class="btn btn-dark mb-3" class="fal fa-user-plus">Guardar</button>     
+            </div>                  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

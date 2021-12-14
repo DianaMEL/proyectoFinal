@@ -1,0 +1,33 @@
+<%- include('layouts/layouts.ejs'); %>
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card mt-4 text-center">
+        <div class="card-header">
+          <h2>Nuevo Record</h2>
+        </div>
+        <div class="card-body">
+          <form action="/Records" method="POST">
+            <div class="form-group">
+                <input type="text" name="clienta" placeholder="Nombre de la clienta" class="form-control mb-3">
+              </div>
+              <div class="col-md-12 mb-3">
+                <select name="marca" class="form-select" aria-label="Default select example">
+                    <option selected>Marca del Tinte</option>
+                    <option value="PRAVANA">PRAVANA</option>
+                    <option value="SALERM">SALERM</option>
+                    <option value="AVINA">AVINA</option>
+                    <option value="HIDRA">HIDRA</option>
+                  </select>
+            </div>
+              <div class="form-group mb-3">
+                <input class="form-control" name="descripcion" placeholder="agregar lo que se uso" rows="3"></input>
+                 </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button type="submit" class="btn btn-dark mb-3" class="fal fa-user-plus">Registrar</button>           
+            </div>                  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

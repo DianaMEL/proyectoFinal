@@ -1,0 +1,56 @@
+<%- include('layouts/layouts.ejs'); %>
+
+<div class="card-header mt-4 text-center">
+    <h2>Ventas Realizadas</h2>
+</div>
+<a href="/cobrar_p_s" >
+    <button type="button" class="btn btn-dark mt-4 mb-3 btn-sm">Cobrar Producto/Servicio </button> 
+</a>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Encargado</th>
+        <th scope="col">Producto/Servicio</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Precentacion</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Total</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% data.map((ventas,index)=>{ %>
+      <tr>
+        <td>
+            <%= index %>
+        </td>
+        <td>
+            <%= ventas.encargado %>
+        </td>
+        <td>
+            <%= ventas.producto %>
+        </td>
+        <td>
+            <%= ventas.tipo %>
+        </td>
+        <td>
+            <%= ventas.precentacion %>
+        </td>
+        <td>
+            <%= ventas.cantidad %>
+        </td>
+        <td>
+            <%= ventas.total %>
+        </td>
+        <td>
+            <a href="/deleteVenta/<%= ventas._id%> ">
+                <ion-icon name="trash-outline" type="button" class="btn btn-danger btn-sm"></ion-icon>
+            </a>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <%- include('layouts/footer.ejs'); %>

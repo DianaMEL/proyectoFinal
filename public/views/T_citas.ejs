@@ -1,0 +1,48 @@
+<%- include('layouts/layouts.ejs'); %>
+
+<div class="card-header mt-4 text-center">
+    <h2>Tabla de Citas</h2>
+</div>
+<a href="/citas" >
+    <button type="button" class="btn btn-dark mt-4 mb-3 btn-sm"> Agregar Cita </button> 
+</a>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% data.map((citas,index)=>{ %>
+      <tr>
+        <td>
+            <%= index %>
+        </td>
+        <td>
+            <%= citas.nombre %>
+        </td>
+        <td>
+            <%= citas.telefono %>
+        </td>
+        <td>
+            <%= citas.servicio %>
+        </td>
+        <td>
+            <%= citas.hora %>
+        </td>
+        <td>
+            <a href="/deleteCita/<%= citas._id%> ">
+                <ion-icon name="trash-outline" type="button" class="btn btn-danger btn-sm"></ion-icon>
+            </a>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <%- include('layouts/footer.ejs'); %>

@@ -1,0 +1,52 @@
+<%- include('layouts/layouts.ejs'); %>
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card mt-4 text-center">
+        <div class="card-header">
+          <h2>Agendar Cita</h2>
+        </div>
+        <div class="card-body">
+          <form action="/citas" method="POST">
+            <div class="form-group">
+                <input type="text" name="nombre" class="form-control mb-3" placeholder="Nombre Completo">
+            </div>
+            <div class="form-group">
+                <input type="text" name="telefono" class="form-control mb-3" placeholder="Numero de Telefono">
+            </div>
+            <div class="col-md-12 mb-3">
+                <select name="servicio" class="form-select" aria-label="Default select example">
+                    <option selected>Servicio</option>
+                    <option value="Corte de Dama">Corte de Dama</option>
+                    <option value="Corte de Caballero">Corte de Caballero</option>
+                    <option value="Depilacion">Depilacion</option>
+                    <option value="Retoque de Raiz">Retoque de Raiz</option>
+                    <option value="Color">Color</option>
+                    <option value="Uñas">Uñas</option>
+                    <option value="Rayos">Rayos</option>
+                  </select>
+            </div>
+            <div class=" col-md-6 mb-3 " >
+                <select name="hora" class="form-select " aria-label="Default select example">
+                    <option selected>Hora</option>
+                    <option value="9:00 am">9:00 am</option>
+                    <option value="10:00 am">10:00 am</option>
+                    <option value="11:00 am">11:00 am</option>
+                    <option value="12:00 pm">12:00 pm</option>
+                    <option value="1:00 pm">1:00 pm</option>
+                    <option value="2:00 pm">2:00 pm</option>
+                    <option value="3:00 pm">3:00 pm</option>
+                    <option value="4:00 pm">4:00 pm</option>
+                    <option value="5:00 pm">5:00 pm</option>
+                    <option value="6:00 pm">6:00 pm</option>
+                    <option value="7:00 pm">7:00 pm</option>
+                  </select>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button type="submit" class="btn btn-dark mb-3" class="fal fa-user-plus">Agendar</button>           
+            </div>                  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

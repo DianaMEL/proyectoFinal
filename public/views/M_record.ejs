@@ -1,0 +1,44 @@
+<%- include('layouts/layouts.ejs'); %>
+
+<div class="card-header mt-4 text-center">
+    <h2>Records</h2>
+</div>
+<a href="/Records" >
+    <button type="button" class="btn btn-dark mt-4 mb-3 btn-sm"> Nuevo Record </button> 
+</a>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Clienta</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% data.map((records,index)=>{ %>
+      <tr>
+        <td>
+            <%= index %>
+        </td>
+        <td>
+            <%= records.clienta %>
+        </td>
+        <td>
+            <%= records.marca %>
+        </td>
+        <td>
+            <%= records.descripcion %>
+        </td>
+        <td>
+            <a href="/deleteRecord/<%= records._id%> ">
+                <ion-icon name="trash-outline" type="button" class="btn btn-danger btn-sm"></ion-icon>
+            </a>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <%- include('layouts/footer.ejs'); %>
